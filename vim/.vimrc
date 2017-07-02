@@ -9,7 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'editorconfig/editorconfig-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
 
@@ -19,9 +19,9 @@ set tabstop=4               " number of visual spaces per tab
 set softtabstop=4           " number of spaces in tab when editing
 set shiftwidth=4            " number of spaces to use for autoindent
 set expandtab               " tabs are spaces
-" Uses shiftwidth instead of tabstop at start of lines
+" uses shiftwidth instead of tabstop at start of lines
 set smarttab
-" When opening a new line and no filetype-specific indenting is enabled, keep
+" when opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
 set number                  " show line numbers
