@@ -1,6 +1,6 @@
 # Set golang-related parameters
-path=('/usr/local/go/bin' $path)
-GOPATH="${HOME}/.go"
+[[ -s '/usr/local/go/bin' ]] && path=('/usr/local/go/bin' $path)
+export GOPATH="${HOME}/.go"
 path=("${GOPATH}/bin" $path)
 
 # Set history-related parameters
@@ -19,6 +19,17 @@ ZSH_TMUX_AUTOSTART=true
 
 # Set PATH
 path=("${HOME}/bin" $path)
-path+=('/usr/sbin')
+case $(uname) in
+    Darwin)
+        path+=('/usr/bin')
+        path+=('/bin')
+        path+=('/usr/sbin')
+        path+=('/sbin')
+        ;;
+    Linux)
+        path+=('/usr/bin')
+        path+=('/usr/sbin')
+        ;;
+esac
 typeset -U path
 export PATH
