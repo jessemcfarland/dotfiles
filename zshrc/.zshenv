@@ -15,7 +15,7 @@ export LC_ALL=en_US.UTF-8
 # oh-my-zsh plugins
 #
 # tmux
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 
 # Set PATH
 path=("${HOME}/bin" $path)
