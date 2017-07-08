@@ -24,7 +24,7 @@ ZSH_TMUX_AUTOSTART=false
 path=("${HOME}/bin" $path)
 typeset -a bins
 bins=('/usr/bin' '/bin' '/usr/sbin' '/sbin')
-for bin in bins; do
+for bin in $bins; do
     [[ ! -L $bin && -d $bin ]] && path+=($bin)
 done
 typeset -U path
