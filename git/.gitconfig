@@ -1,0 +1,26 @@
+[user]
+	name = Jesse McFarland
+	email = jesse.m.mcfarland3@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
+[url "https://github.com/"]
+	insteadOf = gh:
+[url "https://gist.github.com/"]
+	insteadOf = gist:
+[credential]
+	helper = store
