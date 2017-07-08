@@ -18,5 +18,8 @@ indent_size = 8
 [*.rb]
 indent_size = 2
 
+[Vagrantfile]
+indent_size = 2
+
 [*.{yml,yaml}]
 indent_size = 2
