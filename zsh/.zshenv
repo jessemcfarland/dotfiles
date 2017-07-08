@@ -1,3 +1,6 @@
+# Set editor
+export EDITOR=vim
+
 # Set golang-related parameters
 [[ -d '/usr/local/go/bin' ]] && path=('/usr/local/go/bin' $path)
 export GOPATH="${HOME}/.go"
