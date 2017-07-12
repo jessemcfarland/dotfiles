@@ -16,3 +16,7 @@ export LC_ALL=en_US.UTF-8
 #
 # tmux
 ZSH_TMUX_AUTOSTART=false
+
+# oh-my-zsh themes
+export TERM='xterm-256color'
+ZSH_CUSTOM="${HOME}/.zsh-custom"

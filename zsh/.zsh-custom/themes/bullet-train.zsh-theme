@@ -1,0 +1,1 @@
+../../.zsh-themes/bullet-train.zsh/bullet-train.zsh-theme
