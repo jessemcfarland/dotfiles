@@ -1,3 +1,4 @@
+" .vimrc
 set nocompatible            " be iMproved, required
 filetype off                " required
 
@@ -14,7 +15,7 @@ Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()           " required
 
 syntax enable               " enable syntax processing
-filetype plugin indent on   " load filetype-specific indent files   
+filetype plugin indent on   " load filetype-specific indent files
 set tabstop=4               " number of visual spaces per tab
 set softtabstop=4           " number of spaces in tab when editing
 set shiftwidth=4            " number of spaces to use for autoindent
@@ -37,3 +38,15 @@ set hlsearch                " highlight matches
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+
+" turn off line numbers
+nnoremap <leader>n :set nonumber<CR>:set norelativenumber<CR>
+
+" turn on line numbers
+nnoremap <leader>N :set number<CR>:set relativenumber<CR>
+
+" turn off relative line numbers
+nnoremap <leader>r :set norelativenumber<CR>
+
+" turn on relative line numbers
+nnoremap <leader>R :set norelativenumber<CR>
