@@ -11,7 +11,7 @@ for PKG in "${PACKAGES[@]?}"; do
     find "${DOTFILES?}/${PKG?}" -mindepth 1 -maxdepth 1 |\
         while read CONFIG; do
             CONFIG_LINK="${HOME?}/$(basename ${CONFIG?})"
-            if [[ ! -L "${CONFIG_LINK?}" ]]; then
+            if [[ ! -L "${CONFIG_LINK?}" && -e "${CONFIG_LINK?}" ]]; then
                 mv "${CONFIG_LINK?}" "${BACKUP?}"
             fi
             ln -frsT "${CONFIG?}" "${CONFIG_LINK?}"
