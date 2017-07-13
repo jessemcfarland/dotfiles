@@ -18,5 +18,21 @@ export LC_ALL=en_US.UTF-8
 ZSH_TMUX_AUTOSTART=false
 
 # oh-my-zsh themes
-export TERM='xterm-256color'
 ZSH_CUSTOM="${HOME}/.zsh-custom"
+export TERM='xterm-256color'
+BULLETTRAIN_PROMPT_ORDER=(
+	time
+	status
+	custom
+	context
+	dir
+	perl
+	ruby
+	virtualenv
+	aws
+	go
+	elixir
+	git
+	hg
+	cmd_exec_time
+)
