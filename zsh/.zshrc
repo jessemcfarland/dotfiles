@@ -83,6 +83,11 @@ bindkey -v
 autoload -Uz compinit
 compinit
 
+# aliases
+alias cd=' cd'
+alias clear=' clear'
+alias ls=' ls'
+
 # Load RVM into a shell session *as a function*
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 
