@@ -4,3 +4,5 @@ tmux/.tmux/plugins/*
 
 # vim
 .netrwhist
+vim/.vim/bundle/*
+!vim/.vim/bundle/Vundle.vim
