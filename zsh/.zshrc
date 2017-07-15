@@ -1,7 +1,7 @@
 # .zshrc
 #
 # oh-my-zsh configuration
-
+#
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -88,30 +88,35 @@ alias cd=' cd'
 alias clear=' clear'
 alias ls=' ls'
 
-# Load RVM into a shell session *as a function*
-[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
-
-# Add rvm to PATH
-[[ -d "${HOME}/.rvm/bin" ]] && path=("${HOME}/.rvm/bin" $path)
-
-# Prefer GNU commands
-if [[ $(uname) == 'Darwin' ]]; then
-    GNUBIN='/usr/local/opt/coreutils/libexec/gnubin'
-    [[ -d ${GNUBIN} ]] && path=(${GNUBIN} $path)
-fi
-
 # golang setup
 GOBIN='/usr/local/go/bin'
 [[ -d ${GOBIN} ]] && path=(${GOBIN} $path)
 export GOPATH="${HOME}/.go"
 path=("${GOPATH}/bin" $path)
 
-# Set PATH
+# Configure PATH
+#
+# Add rvm to PATH
+[[ -d "${HOME}/.rvm/bin" ]] && path=("${HOME}/.rvm/bin" $path)
+
+# Prefer GNU commands on macOS
+if [[ $(uname) == 'Darwin' ]]; then
+    GNUBIN='/usr/local/opt/coreutils/libexec/gnubin'
+    [[ -d ${GNUBIN} ]] && path=(${GNUBIN} $path)
+fi
+
 path=("${HOME}/bin" $path)
+
+# Ensure system paths are in PATH
 typeset -a bins
-bins=('/usr/bin' '/bin' '/usr/sbin' '/sbin')
+bins=('/usr/local/bin' '/usr/local/sbin' '/usr/bin' '/usr/sbin' '/bin' '/sbin')
 for bin in $bins; do
     [[ ! -L $bin && -d $bin ]] && path+=($bin)
 done
+
+# Enforce uniqueness for paths in PATH
 typeset -U path
 export PATH
+
+# Load RVM into a shell session *as a function*
+[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
