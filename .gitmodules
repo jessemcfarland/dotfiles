@@ -10,3 +10,6 @@
 [submodule "zsh/.zsh-themes/bullet-train.zsh"]
 	path = zsh/.zsh-themes/bullet-train.zsh
 	url = https://github.com/caiogondim/bullet-train.zsh.git
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

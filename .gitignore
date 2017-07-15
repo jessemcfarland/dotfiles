@@ -1,1 +1,6 @@
+# tmux
+tmux/.tmux/plugins/*
+!tmux/.tmux/plugins/tpm
+
+# vim
 .netrwhist
