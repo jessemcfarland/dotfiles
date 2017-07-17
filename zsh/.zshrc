@@ -102,7 +102,9 @@ path=("${GOPATH}/bin" $path)
 # Prefer GNU commands on macOS
 if [[ $(uname) == 'Darwin' ]]; then
     GNUBIN='/usr/local/opt/coreutils/libexec/gnubin'
+    GNUMAN='/usr/local/opt/coreutils/libexec/gnuman'
     [[ -d ${GNUBIN} ]] && path=(${GNUBIN} $path)
+    [[ -d ${GNUMAN} ]] && manpath=(${GNUMAN} $manpath)
 fi
 
 path=("${HOME}/bin" $path)
