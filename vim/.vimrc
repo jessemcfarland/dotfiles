@@ -50,3 +50,9 @@ nnoremap <leader>r :set norelativenumber<CR>
 
 " turn on relative line numbers
 nnoremap <leader>R :set norelativenumber<CR>
+
+" disable paste mode
+nnoremap <leader>p :set nopaste<CR>
+
+" enable paste mode
+nnoremap <leader>P :set paste<CR>
