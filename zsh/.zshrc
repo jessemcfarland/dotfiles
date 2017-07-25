@@ -96,9 +96,6 @@ path=("${GOPATH}/bin" $path)
 
 # Configure PATH
 #
-# Add rvm to PATH
-[[ -d "${HOME}/.rvm/bin" ]] && path=("${HOME}/.rvm/bin" $path)
-
 # Prefer GNU commands on macOS
 if [[ $(uname) == 'Darwin' ]]; then
     GNUBIN='/usr/local/opt/coreutils/libexec/gnubin'
@@ -108,6 +105,9 @@ if [[ $(uname) == 'Darwin' ]]; then
 fi
 
 path=("${HOME}/bin" $path)
+
+# Add rbenv to PATH
+path=("${HOME}/.rbenv/bin" $path)
 
 # Ensure system paths are in PATH
 typeset -a bins
@@ -120,5 +120,5 @@ done
 typeset -U path
 export PATH
 
-# Load RVM into a shell session *as a function*
-[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
+# Initialize rbenv
+eval "$(rbenv init -)"
