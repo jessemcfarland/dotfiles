@@ -25,4 +25,6 @@ mkdir -p ${RUBY_BUILD}
 [[ -d ${RUBY_BUILD}/.git ]] ||\
     git clone https://github.com/rbenv/ruby-build.git ${RUBY_BUILD}
 rbenv install -s ${RUBY_VERSION}
+gem install bundler
+rbenv rehash
 rbenv global ${RUBY_VERSION}
