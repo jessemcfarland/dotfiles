@@ -36,3 +36,5 @@ BULLETTRAIN_PROMPT_ORDER=(
 	hg
 	cmd_exec_time
 )
+
+[[ -s "${HOME}/.zshenv.local" ]] && source "${HOME}/.zshenv.local"

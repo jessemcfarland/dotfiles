@@ -87,6 +87,7 @@ compinit
 alias cd=' cd'
 alias clear=' clear'
 alias ls=' ls'
+[[ -s "${HOME}/.aliases.local" ]] && source "${HOME}/.aliases.local"
 
 # golang setup
 GOBIN='/usr/local/go/bin'
@@ -104,10 +105,11 @@ if [[ $(uname) == 'Darwin' ]]; then
     [[ -d ${GNUMAN} ]] && manpath=(${GNUMAN} $manpath)
 fi
 
-path=("${HOME}/bin" $path)
-
 # Add rbenv to PATH
 path=("${HOME}/.rbenv/bin" $path)
+eval "$(rbenv init -)"
+
+path=("${HOME}/bin" $path)
 
 # Ensure system paths are in PATH
 typeset -a bins
@@ -120,5 +122,3 @@ done
 typeset -U path
 export PATH
 
-# Initialize rbenv
-eval "$(rbenv init -)"
