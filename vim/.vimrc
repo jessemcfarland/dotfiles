@@ -10,7 +10,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+" all other Plugins
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
+Plugin 'rodjek/vim-puppet'
+Plugin 'tpope/vim-markdown'
+Plugin 'vim-syntastic/syntastic'
+
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
 
