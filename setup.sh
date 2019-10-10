@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
 set -e -u
 
-BACKUP="${HOME}/.dotfiles_backup"
-DOTFILES=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-PACKAGES=(editorconfig git ruby tmux vim zsh)
-RUBY_BUILD="${HOME}/.rbenv/plugins/ruby-build"
-RUBY_VERSION='2.4.1'
+backup_location="${HOME}/.dotfiles_backup"
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+packages=(editorconfig git ruby tmux vim zsh)
+ruby_build="${HOME}/.rbenv/plugins/ruby-build"
+ruby_version='2.6.5'
 
 git submodule update --init --merge --remote
-mkdir -p "${BACKUP}"
-for PKG in "${PACKAGES[@]}"; do
-    find "${DOTFILES}/${PKG}" -mindepth 1 -maxdepth 1 |\
-        while read CONFIG; do
-            CONFIG_LINK="${HOME}/$(basename ${CONFIG})"
-            if [[ ! -L "${CONFIG_LINK}" && -e "${CONFIG_LINK}" ]]; then
-                mv "${CONFIG_LINK}" "${BACKUP}"
+mkdir -p "${backup_location}"
+for pkg in "${packages[@]}"; do
+    find "${script_dir}/${pkg}" -mindepth 1 -maxdepth 1 |\
+        while read cfg; do
+            cfg_link="${HOME}/$(basename ${cfg})"
+            if [[ ! -L "${cfg_link}" && -e "${cfg_link}" ]]; then
+                mv "${cfg_link}" "${backup_location}"
             fi
-            ln -frsT "${CONFIG}" "${CONFIG_LINK}"
+            ln -frsT "${cfg}" "${cfg_link}"
         done
 done
 
-cd ${HOME}/.rbenv && src/configure && make -C src
-mkdir -p ${RUBY_BUILD}
-[[ -d ${RUBY_BUILD}/.git ]] ||\
-    git clone https://github.com/rbenv/ruby-build.git ${RUBY_BUILD}
-rbenv install -s ${RUBY_VERSION}
+cd "${HOME}/.rbenv" && src/configure && make -C src
+mkdir -p "${ruby_build}"
+[[ -d "${ruby_build}/.git" ]] ||\
+    git clone https://github.com/rbenv/ruby-build.git "${ruby_build}"
+rbenv install -s "${ruby_version}"
+rbenv global "${ruby_version}"
 gem install bundler
 rbenv rehash
-rbenv global ${RUBY_VERSION}
