@@ -90,8 +90,9 @@ alias ls=' ls'
 [[ -s "${HOME}/.aliases.local" ]] && source "${HOME}/.aliases.local"
 
 # golang setup
-GOBIN='/usr/local/go/bin'
-[[ -d ${GOBIN} ]] && path=(${GOBIN} $path)
+GO_INSTALL="${HOME}/go"
+GO_BIN="${GO_INSTALL}/bin"
+[[ -d ${GO_BIN} ]] && path=(${GO_BIN} $path)
 export GOPATH="${HOME}/.go"
 path=("${GOPATH}/bin" $path)
 
