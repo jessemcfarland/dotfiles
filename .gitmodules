@@ -13,3 +13,9 @@
 [submodule "ruby/.rbenv"]
 	path = ruby/.rbenv
 	url = https://github.com/rbenv/rbenv.git
+[submodule "terminal/gnome-terminal-colors-solarized"]
+	path = terminal/gnome-terminal-colors-solarized
+	url = https://github.com/aruhier/gnome-terminal-colors-solarized.git
+[submodule "terminal/dircolors-solarized"]
+	path = terminal/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized

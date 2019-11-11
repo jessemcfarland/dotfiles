@@ -86,7 +86,7 @@ compinit
 # aliases
 alias cd=' cd'
 alias clear=' clear'
-alias ls=' ls'
+alias ls=' ls --color=auto'
 [[ -s "${HOME}/.aliases.local" ]] && source "${HOME}/.aliases.local"
 
 # golang setup
@@ -123,3 +123,5 @@ done
 typeset -U path
 export PATH
 
+# dircolors solarized
+[[ -s "${HOME}/.dir_colors" ]] && eval $(dircolors "${HOME}/.dir_colors")
