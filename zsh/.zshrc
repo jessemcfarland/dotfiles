@@ -125,3 +125,6 @@ export PATH
 
 # dircolors solarized
 [[ -s "${HOME}/.dir_colors" ]] && eval $(dircolors "${HOME}/.dir_colors")
+
+# Set secure umask
+umask 027
