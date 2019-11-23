@@ -112,6 +112,9 @@ eval "$(rbenv init -)"
 
 path=("${HOME}/bin" $path)
 
+# Enable python virtualenv
+[[ -d "${HOME}/venv" ]] && source "${HOME}/venv/bin/activate"
+
 # Ensure system paths are in PATH
 typeset -a bins
 bins=('/usr/local/bin' '/usr/local/sbin' '/usr/bin' '/usr/sbin' '/bin' '/sbin')
